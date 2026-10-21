@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Alex Garza, MS Computer Science student at Tufts University working on differential privacy, applied cryptography, and usable encryption.">
-<title>Alex Garza · Tufts CS</title>
+<meta name="description" content="Alex N. Garza, MS Computer Science student at Tufts University working on differential privacy, applied cryptography, and usable encryption.">
+<title>Alex N. Garza · Tufts CS</title>
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;1,400&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -37,7 +37,9 @@ aside{position:sticky;top:32px;align-self:start;display:flex;flex-direction:colu
 h1{font:600 2.1rem/1.15 var(--display);margin:0;text-wrap:balance;letter-spacing:-.01em}
 .tagline{color:var(--muted);margin:0;font-size:.95rem}
 .links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:.92rem}
-.links span.k{display:inline-block;width:74px;color:var(--muted);font:500 .7rem var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.links li{display:flex;align-items:baseline;min-width:0}
+.links li a{overflow-wrap:anywhere;min-width:0}
+.links span.k{flex:none;display:inline-block;width:74px;color:var(--muted);font:500 .7rem var(--mono);text-transform:uppercase;letter-spacing:.08em}
 main{display:flex;flex-direction:column;gap:44px;min-width:0}
 section{display:flex;flex-direction:column;gap:14px;max-width:68ch}
 h2{font:600 .74rem var(--mono);text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin:0;
@@ -111,11 +113,12 @@ footer{max-width:1040px;margin:0 auto;padding-block:0 40px;color:var(--muted);fo
   <aside>
     <div class="photo">[ your headshot ]</div>
     <div>
-      <h1>Alex Garza</h1>
+      <h1>Alex N. Garza</h1>
       <p class="tagline">MS Computer Science, Tufts University</p>
     </div>
     <ul class="links">
-      <li><span class="k">Email</span><a href="mailto:alexander.garza40@gmail.com">alexander.garza40@gmail.com</a></li>
+      <li><span class="k">Tufts</span><a href="mailto:Alex.Garza@tufts.edu">Alex.Garza@tufts.edu</a></li>
+      <li><span class="k">Personal</span><a href="mailto:alexander.garza40@gmail.com">alexander.garza40@gmail.com</a></li>
       <li><span class="k">CV</span><span class="todo">[CV PDF]</span></li>
       <li><span class="k">Scholar</span><span class="todo">[Google Scholar]</span></li>
       <li><span class="k">arXiv</span><span class="todo">[arXiv]</span></li>
@@ -146,15 +149,15 @@ footer{max-width:1040px;margin:0 auto;padding-block:0 40px;color:var(--muted);fo
     <section id="publications">
       <h2>Publications</h2>
       <ul class="pubs">
-        <li class="pub"><span class="tag">Under sub.</span><div class="pbody"><div class="t">PrivQ: A Python Framework for Modeling Privacy-Preserving Query Processing</div><div class="a"><strong class="me">Alex Garza</strong>, <a href="https://engineering.tufts.edu/cs/people/faculty/johes-bater" target="_blank" rel="noopener">Johes Bater</a></div><p class="d">A Python framework that makes the cost models of secure multi-party query systems like Shrinkwrap and ORQ executable. It rewrites SQL queries with their privacy mechanisms and simulates how padded and differentially private intermediate results propagate through a query plan, revealing tradeoffs, such as the ε at which one strategy overtakes another, that are hard to see in the closed-form math. Published on PyPI as a teaching and exploration tool.</p><div class="m">Under submission, 2026 · <a href="papers/PrivQ_Garza_Bater.pdf" target="_blank" rel="noopener">PDF</a></div></div></li>
+        <li class="pub"><span class="tag">Under sub.</span><div class="pbody"><div class="t">PrivQ: A Python Framework for Modeling Privacy-Preserving Query Processing</div><div class="a"><strong class="me">Alex N. Garza</strong>, <a href="https://engineering.tufts.edu/cs/people/faculty/johes-bater" target="_blank" rel="noopener">Johes Bater</a></div><p class="d">A Python framework that makes the cost models of secure multi-party query systems like Shrinkwrap and ORQ executable. It rewrites SQL queries with their privacy mechanisms and simulates how padded and differentially private intermediate results propagate through a query plan, revealing tradeoffs, such as the ε at which one strategy overtakes another, that are hard to see in the closed-form math. Published on PyPI as a teaching and exploration tool.</p><div class="m">Under submission, 2026 · <a href="papers/PrivQ_Garza_Bater.pdf" target="_blank" rel="noopener">PDF</a></div></div></li>
       </ul>
     </section>
 
     <section id="current-research">
       <h2>Current research projects</h2>
       <ul class="pubs">
-        <li class="pub"><span class="tag">Ongoing</span><div class="pbody"><div class="t">DAPE: Database Privacy Evaluation by Automating LLM-Based Attribute Inference Attacks Through Query Interface</div><div class="a"><a href="https://www.linkedin.com/in/furkan-sarikaya/" target="_blank" rel="noopener">Furkan Sarıkaya</a>, <strong class="me">Alex Garza</strong>, <a href="https://engineering.tufts.edu/ece/people/faculty/mark-hempstead" target="_blank" rel="noopener">Mark Hempstead</a>, <a href="https://engineering.tufts.edu/cs/people/faculty/johes-bater" target="_blank" rel="noopener">Johes Bater</a></div><p class="d">Uses an LLM as an adaptive adversary against live query-based database interfaces to automate attribute inference attacks, turning attack success into a comparable privacy metric across defenses such as differential privacy.</p><div class="m">Planned submission: November 2026</div></div></li>
-        <li class="pub"><span class="tag">Ongoing</span><div class="pbody"><div class="t">Exploring the Relationship Between Developers' Mental Models and Their Interpretation of Static Analysis Results</div><div class="a"><strong class="me">Alex Garza</strong>, <a href="https://www.linkedin.com/in/samuel-sekyere-79b3b7320/" target="_blank" rel="noopener">Samuel Sekyere</a>, <a href="https://engineering.tufts.edu/cs/people/faculty/daniel-votipka" target="_blank" rel="noopener">Daniel Votipka</a></div><p class="d">Interview study of how developers interpret GitHub code scanning (CodeQL) alerts, and whether mistaken beliefs about how the tool works lead them to dismiss real vulnerabilities, trust false positives, or read a clean scan as proof of security.</p><div class="m">Interviews: Fall 2026</div></div></li>
+        <li class="pub"><span class="tag">Ongoing</span><div class="pbody"><div class="t">DAPE: Database Privacy Evaluation by Automating LLM-Based Attribute Inference Attacks Through Query Interface</div><div class="a"><a href="https://www.linkedin.com/in/furkan-sarikaya/" target="_blank" rel="noopener">Furkan Sarıkaya</a>, <strong class="me">Alex N. Garza</strong>, <a href="https://engineering.tufts.edu/ece/people/faculty/mark-hempstead" target="_blank" rel="noopener">Mark Hempstead</a>, <a href="https://engineering.tufts.edu/cs/people/faculty/johes-bater" target="_blank" rel="noopener">Johes Bater</a></div><p class="d">Uses an LLM as an adaptive adversary against live query-based database interfaces to automate attribute inference attacks, turning attack success into a comparable privacy metric across defenses such as differential privacy.</p><div class="m">Planned submission: November 2026</div></div></li>
+        <li class="pub"><span class="tag">Ongoing</span><div class="pbody"><div class="t">Exploring the Relationship Between Developers' Mental Models and Their Interpretation of Static Analysis Results</div><div class="a"><strong class="me">Alex N. Garza</strong>, <a href="https://www.linkedin.com/in/samuel-sekyere-79b3b7320/" target="_blank" rel="noopener">Samuel Sekyere</a>, <a href="https://engineering.tufts.edu/cs/people/faculty/daniel-votipka" target="_blank" rel="noopener">Daniel Votipka</a></div><p class="d">Interview study of how developers interpret GitHub code scanning (CodeQL) alerts, and whether mistaken beliefs about how the tool works lead them to dismiss real vulnerabilities, trust false positives, or read a clean scan as proof of security.</p><div class="m">Interviews: Fall 2026</div></div></li>
       </ul>
     </section>
 
