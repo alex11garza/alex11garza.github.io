@@ -32,8 +32,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius
   padding:.55rem .8rem;border-radius:4px}
 .wrap{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:260px minmax(0,1fr);gap:56px;padding-block:40px 72px}
 aside{position:sticky;top:32px;align-self:start;display:flex;flex-direction:column;gap:18px}
-.photo{width:148px;aspect-ratio:1;max-width:100%;border-radius:50%;background:var(--accent-soft);border:1px dashed var(--rule);
-  display:grid;place-items:center;color:var(--muted);font:500 .72rem var(--mono);text-align:center;padding:12px}
+.photo{width:148px;height:auto;aspect-ratio:1;max-width:100%;border-radius:50%;object-fit:cover;border:1px solid var(--rule);display:block}
 h1{font:600 2.1rem/1.15 var(--display);margin:0;text-wrap:balance;letter-spacing:-.01em}
 .tagline{color:var(--muted);margin:0;font-size:.95rem}
 .links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:.92rem}
@@ -116,7 +115,7 @@ footer{max-width:1040px;margin:0 auto;padding-block:0 40px;color:var(--muted);fo
 
 <div class="wrap">
   <aside>
-    <div class="photo">[ your headshot ]</div>
+    <img class="photo" src="images/headshot.jpg" alt="Alex N. Garza" width="148" height="148">
     <div>
       <h1>Alex N. Garza</h1>
       <p class="tagline">MS Computer Science, Tufts University</p>
