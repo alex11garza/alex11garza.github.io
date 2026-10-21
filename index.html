@@ -62,6 +62,12 @@ p{margin:0}
 .entry{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px}
 .entry .when{font:400 .8rem var(--mono);color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
 .entry .what{color:var(--muted);grid-column:1/-1;font-size:.94rem}
+.logo-entry{grid-template-columns:44px minmax(0,1fr);gap:14px;align-items:start}
+.logo-entry .ebody{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;min-width:0}
+.logo{display:block;width:44px;height:44px;border-radius:8px;background:#fff;border:1px solid var(--rule);padding:3px;overflow:hidden;transition:transform .15s ease}
+.logo img{width:100%;height:100%;object-fit:contain;display:block;border-radius:5px}
+.logo:hover{transform:translateY(-1px)}
+@media (prefers-reduced-motion:reduce){.logo{transition:none}}
 .news{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
 .news li{display:grid;grid-template-columns:5.6rem minmax(0,1fr);gap:12px}
 .news .d{font:500 .8rem var(--mono);color:var(--muted);font-variant-numeric:tabular-nums;padding-top:.15em}
@@ -71,6 +77,9 @@ footer{max-width:1040px;margin:0 auto;padding-block:0 40px;color:var(--muted);fo
   aside{position:static}
   .photo{width:112px}
   .entry{grid-template-columns:minmax(0,1fr)}
+  .logo-entry{grid-template-columns:44px minmax(0,1fr)}
+  .logo-entry .ebody{grid-template-columns:minmax(0,1fr)}
+  .logo-entry .ebody .when{text-align:left}
   .entry .when{text-align:left}
 }
 </style>
@@ -148,10 +157,10 @@ footer{max-width:1040px;margin:0 auto;padding-block:0 40px;color:var(--muted);fo
     <section id="experience">
       <h2>Experience</h2>
       <ul class="entries">
-        <li class="entry"><b>AI Software Engineer, <a href="https://www.linkedin.com/company/chatsi-ai/" target="_blank" rel="noopener">Chatsi AI</a></b><span class="when">Current</span><span class="what">Own the backend and data layer behind Chatsi AI's product: database design, system architecture, and the .NET/C# services that turn raw application data into customer-facing analytics and clean training data for internal models. Build the embedding and analytics services behind its AI features and set technical direction for its data and AI infrastructure.</span></li>
-        <li class="entry"><b>Software Engineer (API &amp; Data), <a href="https://www.linkedin.com/company/chatsi-ai/" target="_blank" rel="noopener">Chatsi AI</a></b><span class="when"><span class="todo">[dates]</span></span><span class="what">Designed and maintained custom APIs for data ingestion, integration, and processing, with a focus on performance, scalability, and security. Cleaned and structured data to improve analytics accuracy.</span></li>
-        <li class="entry"><b>Junior Software Engineer, <a href="https://www.linkedin.com/company/ntelsec-inc/" target="_blank" rel="noopener">NtelSec, Inc.</a></b><span class="when"><span class="todo">[start, ~2023]</span> – <span class="todo">[end, ~2024]</span></span><span class="what">Built AI chatbots with Azure Machine Learning that operated over federally protected documents, working with cleared teams on a government program under strict data-handling and compliance requirements. Also built web applications and internal tools for clients, containerized with Docker and deployed on Azure.</span></li>
-        <li class="entry"><b>Full Stack Intern, <a href="https://www.linkedin.com/company/select-interactive/" target="_blank" rel="noopener">Select Interactive</a></b><span class="when"><span class="todo">[Summer 2022?]</span> · Dec 2022 – Jan 2023</span><span class="what">Two internships shadowing the lead engineer. Worked across client and server with React, Handlebars, and Sass, and learned database integration and server management.</span></li>
+        <li class="entry logo-entry"><a class="logo" href="https://chatsi.ai" target="_blank" rel="noopener" aria-label="Chatsi AI website"><img src="logos/chatsi.png" alt="Chatsi AI logo" width="40" height="40" loading="lazy"></a><div class="ebody"><b>AI Software Engineer, <a href="https://www.linkedin.com/company/chatsi-ai/" target="_blank" rel="noopener">Chatsi AI</a></b><span class="when">Current</span><span class="what">Own the backend and data layer behind Chatsi AI's product: database design, system architecture, and the .NET/C# services that turn raw application data into customer-facing analytics and clean training data for internal models. Build the embedding and analytics services behind its AI features and set technical direction for its data and AI infrastructure.</span></div></li>
+        <li class="entry logo-entry"><a class="logo" href="https://chatsi.ai" target="_blank" rel="noopener" aria-label="Chatsi AI website"><img src="logos/chatsi.png" alt="Chatsi AI logo" width="40" height="40" loading="lazy"></a><div class="ebody"><b>Software Engineer (API &amp; Data), <a href="https://www.linkedin.com/company/chatsi-ai/" target="_blank" rel="noopener">Chatsi AI</a></b><span class="when"><span class="todo">[dates]</span></span><span class="what">Designed and maintained custom APIs for data ingestion, integration, and processing, with a focus on performance, scalability, and security. Cleaned and structured data to improve analytics accuracy.</span></div></li>
+        <li class="entry logo-entry"><a class="logo" href="https://www.ntelsec.com" target="_blank" rel="noopener" aria-label="NtelSec website"><img src="logos/ntelsec.png" alt="NtelSec logo" width="40" height="40" loading="lazy"></a><div class="ebody"><b>Junior Software Engineer, <a href="https://www.linkedin.com/company/ntelsec-inc/" target="_blank" rel="noopener">NtelSec, Inc.</a></b><span class="when"><span class="todo">[start, ~2023]</span> – <span class="todo">[end, ~2024]</span></span><span class="what">Built AI chatbots with Azure Machine Learning that operated over federally protected documents, working with cleared teams on a government program under strict data-handling and compliance requirements. Also built web applications and internal tools for clients, containerized with Docker and deployed on Azure.</span></div></li>
+        <li class="entry logo-entry"><a class="logo" href="https://www.select-interactive.com" target="_blank" rel="noopener" aria-label="Select Interactive website"><img src="logos/select-interactive.png" alt="Select Interactive logo" width="40" height="40" loading="lazy"></a><div class="ebody"><b>Full Stack Intern, <a href="https://www.linkedin.com/company/select-interactive/" target="_blank" rel="noopener">Select Interactive</a></b><span class="when"><span class="todo">[Summer 2022?]</span> · Dec 2022 – Jan 2023</span><span class="what">Two internships shadowing the lead engineer. Worked across client and server with React, Handlebars, and Sass, and learned database integration and server management.</span></div></li>
       </ul>
     </section>
 
