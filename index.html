@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Alex, MS Computer Science student at Tufts University working on differential privacy, applied cryptography, and usable encryption.">
+<title>Alex [Last name] · Tufts CS</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;1,400&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: academic homepage. Fixed sidebar identity column + single reading column; stacks on phones. */
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --ink:#16202c; --muted:#5a6778; --rule:#dde2e9;
+  --accent:#2a4a7b; --accent-soft:#e7edf6; --todo-bg:#fff3cf; --todo-ink:#6b4a00;
+  --display:"Spectral",Georgia,"Times New Roman",serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11161d; --surface:#171e27; --ink:#e4e9f0; --muted:#97a3b3; --rule:#2a3441;
+  --accent:#8fb1e6; --accent-soft:#1f2b3c; --todo-bg:#3a2f12; --todo-ink:#f3d58a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161d; --surface:#171e27; --ink:#e4e9f0; --muted:#97a3b3; --rule:#2a3441;
+  --accent:#8fb1e6; --accent-soft:#1f2b3c; --todo-bg:#3a2f12; --todo-ink:#f3d58a; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
+a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.todo{background:var(--todo-bg);color:var(--todo-ink);font:500 .82em var(--mono);padding:.08em .4em;border-radius:3px;white-space:normal}
+.draft{max-width:1040px;margin:20px auto 0;font:500 .78rem var(--mono);color:var(--todo-ink);background:var(--todo-bg);
+  padding:.55rem .8rem;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:260px minmax(0,1fr);gap:56px;padding-block:40px 72px}
+aside{position:sticky;top:32px;align-self:start;display:flex;flex-direction:column;gap:18px}
+.photo{width:148px;aspect-ratio:1;max-width:100%;border-radius:50%;background:var(--accent-soft);border:1px dashed var(--rule);
+  display:grid;place-items:center;color:var(--muted);font:500 .72rem var(--mono);text-align:center;padding:12px}
+h1{font:600 2.1rem/1.15 var(--display);margin:0;text-wrap:balance;letter-spacing:-.01em}
+.role{color:var(--muted);margin:0;font-size:.95rem}
+.links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:.92rem}
+.links span.k{display:inline-block;width:74px;color:var(--muted);font:500 .7rem var(--mono);text-transform:uppercase;letter-spacing:.08em}
+main{display:flex;flex-direction:column;gap:44px;min-width:0}
+section{display:flex;flex-direction:column;gap:14px;max-width:68ch}
+h2{font:600 .74rem var(--mono);text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin:0;
+  padding-bottom:8px;border-bottom:1px solid var(--rule)}
+p{margin:0}
+.lede{font:400 1.32rem/1.5 var(--display)}
+.lede em{font-style:italic;color:var(--accent)}
+.interests{display:grid;gap:14px}
+.interest{display:grid;grid-template-columns:2.2rem minmax(0,1fr);gap:12px;align-items:baseline}
+.sym{font:500 1.15rem var(--display);color:var(--accent);text-align:center}
+.interest b{font-weight:600}
+.interest p{color:var(--muted)}
+.pubs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px}
+.pub{display:grid;grid-template-columns:5.2rem minmax(0,1fr);gap:14px}
+.tag{font:500 .68rem var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--accent);background:var(--accent-soft);
+  padding:.25em .5em;border-radius:3px;height:fit-content;text-align:center}
+.pub .t{font-weight:600}
+.pub .a{color:var(--muted);font-size:.93rem}
+.entries{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
+.entry{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px}
+.entry .when{font:400 .8rem var(--mono);color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
+.entry .what{color:var(--muted);grid-column:1/-1;font-size:.94rem}
+.news{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.news li{display:grid;grid-template-columns:5.6rem minmax(0,1fr);gap:12px}
+.news .d{font:500 .8rem var(--mono);color:var(--muted);font-variant-numeric:tabular-nums;padding-top:.15em}
+footer{max-width:1040px;margin:0 auto;padding-block:0 40px;color:var(--muted);font:400 .75rem var(--mono)}
+@media (max-width:760px){
+  .wrap{grid-template-columns:minmax(0,1fr);gap:36px;padding-block:28px 56px}
+  aside{position:static}
+  .photo{width:112px}
+  .entry{grid-template-columns:minmax(0,1fr)}
+  .entry .when{text-align:left}
+}
+</style>
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <aside>
+    <div class="photo">[ your headshot ]</div>
+    <div>
+      <h1>Alex <span class="todo">[Last name]</span></h1>
+      <p class="role">MS Computer Science, Tufts University</p>
+    </div>
+    <ul class="links">
+      <li><span class="k">Email</span><span class="todo">[email]</span></li>
+      <li><span class="k">CV</span><span class="todo">[CV PDF]</span></li>
+      <li><span class="k">Scholar</span><span class="todo">[Google Scholar]</span></li>
+      <li><span class="k">GitHub</span><span class="todo">[GitHub]</span></li>
+      <li><span class="k">LinkedIn</span><span class="todo">[LinkedIn]</span></li>
+    </ul>
+  </aside>
+
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p class="lede">I build privacy protections that keep their guarantees <em>in real implementations</em> and for the people who rely on them.</p>
+      <p>I'm a Master's student in Computer Science at Tufts University, advised by Prof. Johes Bater. I've also worked with Prof. Mark Hempstead and Prof. Daniel Votipka. I'm applying to PhD programs for Fall 2027.</p>
+      <p>With Prof. Bater, I've published a workshop paper on differentially private query processing. With Prof. Bater and Prof. Hempstead, I'm finishing a second DP paper that connects privacy guarantees to the systems and hardware they run on.</p>
+      <p>Outside academia, I'm a contract backend and data engineer at <a href="#" class="todo">Chatsi AI [LinkedIn URL]</a>, a venture-funded startup. I design secure, usable internal APIs that bring customer data into the company's systems, and I work with the senior AI architect on vector search infrastructure.</p>
+    </section>
+
+    <section id="research">
+      <h2>Research interests</h2>
+      <div class="interests">
+        <div class="interest"><span class="sym">ε</span><div><b>Differential privacy</b><p>Making sure real implementations keep their theoretical guarantees.</p></div></div>
+        <div class="interest"><span class="sym">⊕</span><div><b>Applied cryptography</b><p>Encryption and secure computation for practical systems and data.</p></div></div>
+        <div class="interest"><span class="sym">◉</span><div><b>Usable encryption</b><p>Making strong encryption understandable and trustworthy for real people.</p></div></div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <ul class="pubs">
+        <li class="pub"><span class="tag">Workshop</span><div><div class="t"><span class="todo">[Paper title]</span></div><div class="a">Alex <span class="todo">[Last name]</span>, Johes Bater. <span class="todo">[Venue, year]</span></div></div></li>
+        <li class="pub"><span class="tag">Under sub.</span><div><div class="t"><span class="todo">[Working title]</span></div><div class="a">Alex <span class="todo">[Last name]</span>, <span class="todo">[PhD student]</span>, Mark Hempstead, Johes Bater. Submitting November 2026.</div></div></li>
+      </ul>
+    </section>
+
+    <section id="news">
+      <h2>News</h2>
+      <ul class="news">
+        <li><span class="d">Dec 2026</span><span>Graduating with an MS in Computer Science from Tufts.</span></li>
+        <li><span class="d">Nov 2026</span><span>Submitted <span class="todo">[paper]</span> to <span class="todo">[venue]</span> with Johes Bater and Mark Hempstead.</span></li>
+        <li><span class="d"><span class="todo">[date]</span></span><span>Workshop paper <span class="todo">[title]</span> accepted at <span class="todo">[venue]</span>.</span></li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul class="entries">
+        <li class="entry"><b>Contract Backend / Data Engineer, Chatsi AI</b><span class="when">Current</span><span class="what">Secure, usable internal APIs for customer data; vector search infrastructure.</span></li>
+        <li class="entry"><b>Software Engineer, Intelsec</b><span class="when"><span class="todo">[start, ~2023]</span> – <span class="todo">[end, ~2024]</span></span><span class="what">Built usable AI chatbots with AI Foundry for public-sector security personnel.</span></li>
+        <li class="entry"><b>Full Stack Intern, Select Interactive</b><span class="when">Dec 2022 – Jan 2023</span><span class="what"><span class="todo">[what you worked on, from LinkedIn]</span></span></li>
+        <li class="entry"><b>Full Stack Intern, Select Interactive</b><span class="when"><span class="todo">[Summer 2022?]</span></span><span class="what"><span class="todo">[what you worked on, from LinkedIn]</span></span></li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul class="entries">
+        <li class="entry"><b>MS in Computer Science, Tufts University</b><span class="when">Expected Dec 2026</span></li>
+        <li class="entry"><b>BS, The University of Texas at Austin</b><span class="when">2022</span></li>
+      </ul>
+    </section>
+
+    <section id="personal">
+      <h2>Outside of work</h2>
+      <p>I enjoy math puzzles and competition problems, chess, and poker, and I build financial models as personal projects <span class="todo">[link / details]</span>. I'm also a big soccer fan and play in a recreational league.</p>
+    </section>
+  </main>
+</div>
+<footer>Last updated October 2026</footer>
+</body>
+</html>
